@@ -39,13 +39,13 @@ namespace Activity5._4._1
         {
             if(guess > guessMe)
             {
-                Console.WriteLine("Lower!");
+                Console.WriteLine("Smaller!");
             }
             else
             {
                 Console.WriteLine("Greater!");
             }
-            //give some hints: text-output example: guess bigger or guess samller
+            //give some hints: text-output example: guess bigger or guess smaller
         }
         public static int WhoseTurn() //shared field for all players
         {
@@ -58,16 +58,16 @@ namespace Activity5._4._1
         }
         public string GetPlayerName() //Object dependent non-static data
         {
-            //return player name
+            return this.playerName;//return player name
         }
         
         public int Play() //object dependent non static method
         {
-            steps++;
-            //update total steps
-            //wtite a message like playerName-Enter your guess
-            //input a number
-            //return the number
+            int input;
+            steps++; //update total steps
+            Console.WriteLine($"{this.playerName}, enter your guess:"); //write a message like playerName-Enter your guess
+            input = int.Parse(Console.ReadLine()); //input a number
+            return input;//return the number
         }
     }
 }
