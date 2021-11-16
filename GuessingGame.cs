@@ -27,18 +27,29 @@ namespace Activity5._4._1
         public GuessingGame(string Name) //constructor for object initialization, set player name, and count total players
         {
             this.playerName = Name;
+            totalPlayers++;
         }
         public static int CheckWin(int currentGuess)// common method for all players 
         {
-            //ToDo
+            if(currentGuess == guessMe) return 0;
+            else return -1;     
             //return 0 for correct guess, 1 if actual value is bigger, -1 Otherwise.
         }
         public static void GiveHints(int guess) //common hints for all players
         {
+            if(guess > guessMe)
+            {
+                Console.WriteLine("Lower!");
+            }
+            else
+            {
+                Console.WriteLine("Greater!");
+            }
             //give some hints: text-output example: guess bigger or guess samller
         }
         public static int WhoseTurn() //shared field for all players
         {
+            return steps % totalPlayers + 1;
             //determine whose turn and return playerID number
         }
         public static int GetWinningPlayerID() //shared filed for all players
@@ -52,6 +63,7 @@ namespace Activity5._4._1
         
         public int Play() //object dependent non static method
         {
+            steps++;
             //update total steps
             //wtite a message like playerName-Enter your guess
             //input a number
