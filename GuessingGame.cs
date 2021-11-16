@@ -41,7 +41,7 @@ namespace Activity5._4._1
             {
                 Console.WriteLine("Smaller!");
             }
-            else
+            else if (guess < guessMe)
             {
                 Console.WriteLine("Greater!");
             }
